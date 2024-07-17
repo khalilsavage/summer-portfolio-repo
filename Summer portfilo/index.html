@@ -38,34 +38,54 @@
                 <p>I'm Khalil, I go to salesian college preparatory and I'm going to be a sophmore this year.I'm 15 years old and I play basketball. </p>
                   
                     <div class="tab-titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Experience</p>
-                        <p class="tab-links">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
                         </div>
-                       <div class="tab-contents">
+                       <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>UI/UX</span><br>designing web/app interfaces</li>
-                            <li><span>web development</span><br>web app development</li>
-                            <li><span>App development</span><br>Building Android/ios apps</li>
+                            <li><span>athletic</span><br>multi sport athlete</li>
+                            <li><span>bilingual</span><br>english and chinese</li>
+                            <li><span>video games</span><br>2k and fifa</li>
                         </ul>
-                        <div class="tab-contents">
+                        <div class="tab-contents" id="experience">
                             <ul>
-                                <li><span>UI/UX</span><br>designing web/app interfaces</li>
-                                <li><span>web development</span><br>web app development</li>
-                                <li><span>App development</span><br>Building Android/ios apps</li>
+                                <li><span>basketball</span><br>highschool for salesian</li>
+                                <li><span>basketball,soccer, and football</span><br>middle school</li>
+                                <li><span>soccer</span><br>elementary</li>
                             </ul>
-                            <div class="tab-contents">
+                            <div class="tab-contents" id="education">
                                 <ul>
-                                    <li><span>UI/UX</span><br>designing web/app interfaces</li>
-                                    <li><span>web development</span><br>web app development</li>
-                                    <li><span>App development</span><br>Building Android/ios apps</li>
-                                </ul>
+                                    <li><span>2023</span><br>highschool</li>
+                                    <li><span>2020-2023</span><br>middle school</li>
+                                    <li><span>2013-2020</span><br>elementary</li>
+                             </ul>
                        </div>
                     </div>   
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 </div>
-</body>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");    
+    var tabcontents = document.getElementsByClassName("tab-contents");   
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        
+</script>
+
+</body>    
 </html>
