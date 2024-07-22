@@ -39,29 +39,33 @@
                   
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('exp')">Experience</p>
+                        <p class="tab-links" onclick="opentab('edu')">Education</p>
                         </div>
                        <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>athletic</span><br>multi sport athlete</li>
-                            <li><span>bilingual</span><br>english and chinese</li>
-                            <li><span>video games</span><br>2k and fifa</li>
-                        </ul>
-                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>athletic</span><br>multi sport athlete</li>
+                                <li><span>bilingual</span><br>english and chinese</li>
+                                <li><span>video games</span><br>2k and fifa</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="exp">
                             <ul>
                                 <li><span>basketball</span><br>highschool for salesian</li>
                                 <li><span>basketball,soccer, and football</span><br>middle school</li>
                                 <li><span>soccer</span><br>elementary</li>
                             </ul>
-                            <div class="tab-contents" id="education">
-                                <ul>
-                                    <li><span>2023</span><br>highschool</li>
-                                    <li><span>2020-2023</span><br>middle school</li>
-                                    <li><span>2013-2020</span><br>elementary</li>
-                             </ul>
-                       </div>
-                    </div>   
+                        </div>
+
+                        <div class="tab-contents" id="edu">
+                            <ul>
+                                <li><span>2023</span><br>highschool</li>
+                                <li><span>2020-2023</span><br>middle school</li>
+                                <li><span>2013-2020</span><br>elementary</li>
+                            </ul>
+                        </div>
+                     </div>   
                 </div>
             </div>
         </div>
@@ -80,6 +84,7 @@
             for(tabcontent of tabcontents){
                 tabcontent.classList.remove("active-tab");
             }
+
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
