@@ -2,95 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" context="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>personal porfolio</title>
+    <title>personal portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="header">   
-    <div class="container"> 
-        <nav>
-            <img src="image/THGP_Logo.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Porfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    <div class="header-text">   
-                        <p>UI/UX Designer</p>
-             <h1>Hi, I'm<span> Khalil</span><br>Savage from emeryville</h1>
-        </div>      
-    </div>    
-</div>
-<!--   --------about---------- -->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="image/IMG_0996.jpg">
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="image/THGP_Logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>UI/UX Designer</p>
+                <h1>Hi, I'm <span>Khalil</span><br>Savage from Emeryville</h1>
             </div>
-            <div class="about-col-2">
-                <h1 class="sub title">About Me</h1>
-                <p>I'm Khalil, I go to salesian college preparatory and I'm going to be a sophmore this year.I'm 15 years old and I play basketball. </p>
-                  
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('exp')">Experience</p>
-                        <p class="tab-links" onclick="opentab('edu')">Education</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="about-col-1">
+                    <img src="image/IMG_0996.jpg">
+                </div>
+
+                
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I'm Khalil, I go to Salesian College Preparatory and I'm going to be a sophomore this year. I'm 15 years old and I play basketball.</p>
+                    
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('exp')">Experience</p>
+                            <p class="tab-links" onclick="opentab('edu')">Education</p>
                         </div>
-                       <div class="tab-contents active-tab" id="skills">
+
+                        <div class="tab-contents active-tab" id="skills">
                             <ul>
-                                <li><span>athletic</span><br>multi sport athlete</li>
-                                <li><span>bilingual</span><br>english and chinese</li>
-                                <li><span>video games</span><br>2k and fifa</li>
+                                <li><span>Athletic</span><br>Multi sport athlete</li>
+                                <li><span>Bilingual</span><br>English and Chinese</li>
+                                <li><span>Video Games</span><br>2K and FIFA</li>
                             </ul>
                         </div>
 
                         <div class="tab-contents" id="exp">
                             <ul>
-                                <li><span>basketball</span><br>highschool for salesian</li>
-                                <li><span>basketball,soccer, and football</span><br>middle school</li>
-                                <li><span>soccer</span><br>elementary</li>
+                                <li><span>Basketball</span><br>High school for Salesian</li>
+                                <li><span>Basketball, Soccer, and Football</span><br>Middle school</li>
+                                <li><span>Soccer</span><br>Elementary</li>
                             </ul>
                         </div>
-
+                        
                         <div class="tab-contents" id="edu">
                             <ul>
-                                <li><span>2023</span><br>highschool</li>
-                                <li><span>2020-2023</span><br>middle school</li>
-                                <li><span>2013-2020</span><br>elementary</li>
+                                <li><span>2023</span><br>High school</li>
+                                <li><span>2020-2023</span><br>Middle school</li>
+                                <li><span>2013-2020</span><br>Elementary</li>
                             </ul>
                         </div>
-                     </div>   
                 </div>
             </div>
         </div>
-    </div> 
-</div>
+    </div>
 
-<script>
 
-    var tablinks = document.getElementsByClassName("tab-links");    
-    var tabcontents = document.getElementsByClassName("tab-contents");   
+    <!-- services Section -->
+     <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
 
-        function opentab(tabname){
-            for(tablink of tablinks){
+            <div class="services-list">
+
+            </div>
+        </div>
+     </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
                 tablink.classList.remove("active-link");
             }
-            for(tabcontent of tabcontents){
+            for (tabcontent of tabcontents) {
                 tabcontent.classList.remove("active-tab");
             }
 
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
+    </script>
 
-        
-</script>
-
-</body>    
+</body>
 </html>
