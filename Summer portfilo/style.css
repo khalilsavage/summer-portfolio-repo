@@ -109,7 +109,7 @@ font-size: 30px;
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: x#716019;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -125,7 +125,7 @@ font-size: 30px;
     margin: 10px 0;
 }
 .tab-contents ul li span{
-    color:#b54769;
+    color:#7b4920;
     font-size: 14px;
 }
 .tab-contents{
