@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>personal portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e2c1e8075a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -13,15 +14,15 @@
             <nav>
                 <img src="image/THGP_Logo.png" class="logo">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="header">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="porfolio">Portfolio</a></li>
+                    <li><a href="contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-text">
-                <p>UI/UX Designer</p>
+                
                 <h1>Hi, I'm <span>Khalil</span><br>Savage from Emeryville</h1>
             </div>
         </div>
@@ -51,7 +52,7 @@
 
                         <div class="tab-contents active-tab" id="skills">
                             <ul>
-                                <li><span>Athletic</span><br>Multi sport athlete</li>
+                                <li><span>Athletic</span><br>played multiple sports</li>
                                 <li><span>Bilingual</span><br>English and Chinese</li>
                                 <li><span>Video Games</span><br>2K and FIFA</li>
                             </ul>
@@ -84,27 +85,90 @@
     <div class="container">
         <h1 class="sub-title">Services</h1>
         <div class="services-list">
+
             <div>
+                <i class="fa-solid fa-globe"></i>
                 <h2>Translation</h2>
                 <p>chinese and english translater </p>
                 <a href="#">learn more</a>
             </div>
 
             <div>
+                <i class="fa-solid fa-child"></i>
                 <h2>Care taker</h2>
                 <p>good with children</p>
                 <a href="#">learn more</a>
             </div>
-           
-        </div>
+            <div>
+        <i class="fa-solid fa-computer"></i>
+           <h2>Coding</h2>
+           <p>Python and Html</p>
+           <a href="#">learn more</a>
+            </div> 
     </div>
 </div>
             </div>
         </div>
      </div>
-
+<div id="porfolio">
+    <div class="container">
+        <h1 class="sub-title">My Hobbies</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="image/musi.jpeg">
+                <div class="layer">
+                <h3>music</h3>
+                <p>I played trombone for a little bit before high school, i love listening to all types of music</p>
+                <a  href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/basketball.jpeg">
+                <div class="layer">
+                <h3>basketball</h3>
+                <p>Ive been playing basketball since the 7th grade.</p>
+                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/paul george.jpeg">
+                <div class="layer">
+                    <h3>gaming</h3>
+                    <p>I started playing video games on my xbox 360 and this was my favorite game.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>    
+        </div>
+        <a href="#" class="btn">see more</a>
     </div>
  </div>
+ <!-- ------contact-------- -->
+  <div id="contact">
+    <div class="container">
+       <div class="row">
+           <div  class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>khalil.savage@hgs.hiddengenius.org</p>
+                <p><i class="fa-solid fa-square-phone"></i>415-605-6868</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://snapchat.com/"><i class="fa-brands fa-snapchat"></i></a>
+                    <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <a href="image/Screenshot 2024-08-01 at 12.00.22 PM.png" download class="btn btn2">Download CV</a>
+            </div>  
+             <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" row="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg">hello</span>
+             </div>
+       </div>
+    </div>
+  </div>
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
@@ -121,6 +185,22 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx8gc9Ng9k3PlF2U8ZaY5vcf0WEETHdPtmLIO5gXEPNznnhXvLt-SOcgaSXeaUrx2pF/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
 
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {})
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 </html>
